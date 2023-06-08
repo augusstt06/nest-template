@@ -2,12 +2,12 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './domain/user/entities/user.entity';
-import { UserModule } from './domain/user/user.module';
+import { UsersModule } from './domain/users/users.module';
+import { User } from './entity/users.entity';
 
 @Module({
   imports: [
-    UserModule,
+    UsersModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',

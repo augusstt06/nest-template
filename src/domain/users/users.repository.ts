@@ -3,6 +3,7 @@ import { User } from 'src/entity/users.entity';
 import { DataSource, Repository } from 'typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
 
+// Repository 자체를 extends
 @Injectable()
 export class UsersRepository extends Repository<User> {
   constructor(private dataSource: DataSource) {
