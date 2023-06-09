@@ -21,7 +21,7 @@ export class UsersService {
     return this.usersRepository.deleteUser(id);
   }
 
-  async createUserProfile(id: number, profileDto: ProfileDto) {
-    return await this.usersRepository.createUserProfile(id, profileDto);
-  }
+  // async createUserProfile(id: number, profileDto: ProfileDto) {
+  //   return await this.usersRepository.createUserProfile(id, profileDto);
+  // }
 }
