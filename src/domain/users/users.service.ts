@@ -3,12 +3,15 @@ import { UsersRepository } from './repository/users.repository';
 import { UserDto } from './dto/user.dto';
 import { ProfileDto } from './dto/profile.dto';
 import { ProfileRepository } from './repository/profile.repository';
+import { PostDto } from './dto/post.dto';
+import { PostRepository } from './repository/post.repository';
 
 @Injectable()
 export class UsersService {
   constructor(
     private usersRepository: UsersRepository,
     private profileRepository: ProfileRepository,
+    private postRepository: PostRepository,
   ) {}
 
   async findAllUsers() {
@@ -27,7 +30,8 @@ export class UsersService {
   async createUserProfile(id: number, profileDto: ProfileDto) {
     return await this.profileRepository.createUserProfile(id, profileDto);
   }
-  // async createUserProfile(id: number, profileDto: ProfileDto) {
-  //   return await this.usersRepository.createUserProfile(id, profileDto);
-  // }
+
+  async createPost(id: number, postDto: PostDto) {
+    return this.postRepository.createPost(id, postDto);
+  }
 }
