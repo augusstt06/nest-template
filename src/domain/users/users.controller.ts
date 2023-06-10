@@ -48,6 +48,6 @@ export class UsersController {
 
   @Post(`:id/posts`)
   createPost(@Param('id', ParseIntPipe) id: number, @Body() postDto: PostDto) {
-    return this.createPost(id, postDto);
+    return this.userService.createPost(id, postDto);
   }
 }
