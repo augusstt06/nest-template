@@ -2,10 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { UsersRepository } from './repository/users.repository';
 import { UserDto } from './dto/user.dto';
 import { ProfileDto } from './dto/profile.dto';
+import { ProfileRepository } from './repository/profile.repository';
 
 @Injectable()
 export class UsersService {
-  constructor(private usersRepository: UsersRepository) {}
+  constructor(
+    private usersRepository: UsersRepository,
+    private profileRepository: ProfileRepository,
+  ) {}
 
   async findAllUsers() {
     return await this.usersRepository.findAllUsers();
@@ -20,7 +24,9 @@ export class UsersService {
   async deleteUser(id: number) {
     return this.usersRepository.deleteUser(id);
   }
-
+  async createUserProfile(id: number, profileDto: ProfileDto) {
+    return await this.profileRepository.createUserProfile(id, profileDto);
+  }
   // async createUserProfile(id: number, profileDto: ProfileDto) {
   //   return await this.usersRepository.createUserProfile(id, profileDto);
   // }

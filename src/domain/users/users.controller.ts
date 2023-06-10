@@ -37,11 +37,11 @@ export class UsersController {
     return await this.userService.deleteUser(id);
   }
 
-  // @Post(':id/profiles')
-  // createUserProfile(
-  //   @Param('id', ParseIntPipe) id: number,
-  //   @Body() profileDto: ProfileDto,
-  // ) {
-  //   return this.userService.createUserProfile(id, profileDto);
-  // }
+  @Post(':id/profiles')
+  createUserProfile(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() profileDto: ProfileDto,
+  ) {
+    return this.userService.createUserProfile(id, profileDto);
+  }
 }
