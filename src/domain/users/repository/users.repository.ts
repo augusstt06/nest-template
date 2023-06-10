@@ -10,7 +10,7 @@ export class UsersRepository extends Repository<UserEntity> {
   }
 
   async findAllUsers() {
-    const users = await this.find({ relations: ['profile'] });
+    const users = await this.find({ relations: ['profile', 'post'] });
     return users;
   }
 
