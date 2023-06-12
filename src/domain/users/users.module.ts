@@ -6,7 +6,7 @@ import { UserEntity } from 'src/entity/user.entity';
 import { UsersRepository } from './repository/users.repository';
 import { ProfileEntity } from 'src/entity/profile.entity';
 import { ProfileRepository } from './repository/profile.repository';
-import { PostEntity } from 'src/entity/post.entity';
+import { PostEntity } from 'src/entity/users/post.entity';
 import { PostRepository } from './repository/post.repository';
 
 @Module({
