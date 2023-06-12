@@ -24,8 +24,6 @@ export class UserEntity {
   @JoinColumn()
   profile: ProfileEntity;
 
-  // User와 Post는 일대다의 관계를 가진다.
-  // 1명의 사용자가 다수의 게시물 생성 가능
   @OneToMany(() => PostEntity, (post) => post.user)
   post: PostEntity[];
 }
