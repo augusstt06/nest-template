@@ -13,14 +13,14 @@ export class PostRepository extends Repository<PostEntity> {
     super(PostEntity, dataSource.createEntityManager());
   }
 
-  async createPost(id: number, postDto: PostDto) {
-    const user = await this.userRepository.findOneBy({ id });
-    if (!user)
-      throw new HttpException(
-        `User Not Found. Cannot create Post.`,
-        HttpStatus.BAD_REQUEST,
-      );
-    const newPost = this.create({ ...postDto, user });
-    return this.save(newPost);
-  }
+  // async createPost(id: number, postDto: PostDto) {
+  //   const user = await this.userRepository.findOneBy({ id });
+  //   if (!user)
+  //     throw new HttpException(
+  //       `User Not Found. Cannot create Post.`,
+  //       HttpStatus.BAD_REQUEST,
+  //     );
+  //   const newPost = this.create({ ...postDto, user });
+  //   return this.save(newPost);
+  // }
 }

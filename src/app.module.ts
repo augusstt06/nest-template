@@ -3,13 +3,16 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './domain/users/users.module';
-import { UserEntity } from './entity/user.entity';
-import { ProfileEntity } from './entity/profile.entity';
+import { UserEntity } from './entity/users/user.entity';
+import { ProfileEntity } from './entity/users/profile.entity';
 import { PostEntity } from './entity/users/post.entity';
+import { BoardEntity } from './entity/boards/board.entity';
+import { BoardsModule } from './domain/boards/boards.module';
 
 @Module({
   imports: [
     UsersModule,
+    BoardsModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -17,7 +20,7 @@ import { PostEntity } from './entity/users/post.entity';
       username: 'template',
       password: 'template',
       database: 'nest_template',
-      entities: [UserEntity, ProfileEntity, PostEntity],
+      entities: [UserEntity, ProfileEntity, PostEntity, BoardEntity],
       synchronize: true,
     }),
   ],

@@ -31,7 +31,7 @@ export class UsersService {
     return await this.profileRepository.createUserProfile(id, profileDto);
   }
 
-  async createPost(id: number, postDto: PostDto) {
-    return this.postRepository.createPost(id, postDto);
-  }
+  // async createPost(id: number, postDto: PostDto) {
+  //   return this.postRepository.createPost(id, postDto);
+  // }
 }

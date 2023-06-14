@@ -8,6 +8,7 @@ import {
 } from 'typeorm';
 import { ProfileEntity } from './profile.entity';
 import { PostEntity } from './post.entity';
+import { BoardEntity } from '../boards/board.entity';
 
 @Entity({ name: 'users' })
 export class UserEntity {
@@ -24,6 +25,8 @@ export class UserEntity {
   @JoinColumn()
   profile: ProfileEntity;
 
-  @OneToMany(() => PostEntity, (post) => post.user)
-  post: PostEntity[];
+  // @OneToMany(() => PostEntity, (post) => post.user)
+  // post: PostEntity[];
+  @OneToMany(() => BoardEntity, (board) => board.user)
+  board: BoardEntity[];
 }
