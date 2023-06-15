@@ -27,6 +27,7 @@ export class BoardsRepository extends Repository<BoardEntity> {
       );
     const newPost = this.create({ ...boardDto, createAt: new Date(), user });
     return this.save(newPost);
+    // board dto 설정하기
     // const newBoard = this.create({ ...boardDto, createAt: new Date() });
     // return this.save(newBoard);
   }
