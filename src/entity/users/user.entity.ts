@@ -24,8 +24,6 @@ export class UserEntity {
   @JoinColumn()
   profile: ProfileEntity;
 
-  // @OneToMany(() => PostEntity, (post) => post.user)
-  // post: PostEntity[];
   @OneToMany(() => BoardEntity, (board) => board.user)
   board: BoardEntity[];
 }

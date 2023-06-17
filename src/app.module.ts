@@ -5,7 +5,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './domain/users/users.module';
 import { UserEntity } from './entity/users/user.entity';
 import { ProfileEntity } from './entity/users/profile.entity';
-import { PostEntity } from './entity/users/post.entity';
 import { BoardEntity } from './entity/boards/board.entity';
 import { BoardsModule } from './domain/boards/boards.module';
 
@@ -20,7 +19,7 @@ import { BoardsModule } from './domain/boards/boards.module';
       username: 'template',
       password: 'template',
       database: 'nest_template',
-      entities: [UserEntity, ProfileEntity, PostEntity, BoardEntity],
+      entities: [UserEntity, ProfileEntity, BoardEntity],
       synchronize: true,
     }),
   ],
