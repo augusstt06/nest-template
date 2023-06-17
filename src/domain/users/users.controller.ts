@@ -11,7 +11,6 @@ import {
 import { UsersService } from './users.service';
 import { UserDto } from './dto/user.dto';
 import { ProfileDto } from './dto/profile.dto';
-import { PostDto } from './dto/post.dto';
 
 @Controller('users')
 export class UsersController {
@@ -45,9 +44,4 @@ export class UsersController {
   ) {
     return this.userService.createUserProfile(id, profileDto);
   }
-
-  // @Post(`:id/posts`)
-  // createPost(@Param('id', ParseIntPipe) id: number, @Body() postDto: PostDto) {
-  //   return this.userService.createPost(id, postDto);
-  // }
 }

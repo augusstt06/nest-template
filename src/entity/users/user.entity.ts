@@ -7,7 +7,6 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { ProfileEntity } from './profile.entity';
-import { PostEntity } from './post.entity';
 import { BoardEntity } from '../boards/board.entity';
 
 @Entity({ name: 'users' })

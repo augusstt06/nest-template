@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { UserEntity } from 'src/entity/users/user.entity';
+import { UserEntity } from '../../../entity/users/user.entity';
 import { DataSource, Repository } from 'typeorm';
 import { UserDto } from '../dto/user.dto';
 
@@ -11,6 +11,7 @@ export class UsersRepository extends Repository<UserEntity> {
 
   async findAllUsers() {
     const users = await this.find({ relations: ['profile', 'board'] });
+    console.log(users[0]);
     return users;
   }
 

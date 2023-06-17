@@ -10,15 +10,15 @@ export class BoardsService {
     return this.boardRepository.findAllBoard();
   }
 
-  createBoard(id: number, boardDto: BoardDto) {
-    return this.boardRepository.createBoard(id, boardDto);
+  createBoard(userId: number, boardDto: BoardDto) {
+    return this.boardRepository.createBoard(userId, boardDto);
   }
 
-  async updateBoard(id: number, boardDto: BoardDto) {
-    return await this.boardRepository.updateBoard(id, boardDto);
+  async updateBoard(boardId: number, boardDto: BoardDto) {
+    return await this.boardRepository.updateBoard(boardId, boardDto);
   }
 
-  async deleteBoard(id: number) {
-    return this.boardRepository.deleteBoard(id);
+  async deleteBoard(boardId: number) {
+    return this.boardRepository.deleteBoard(boardId);
   }
 }

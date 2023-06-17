@@ -30,11 +30,11 @@ export class BoardsRepository extends Repository<BoardEntity> {
     return this.save(newPost);
   }
 
-  async updateBoard(id: number, boardDto: BoardDto) {
-    return await this.update({ id }, { ...boardDto });
+  async updateBoard(boardId: number, boardDto: BoardDto) {
+    return await this.update({ boardId }, { ...boardDto });
   }
 
-  async deleteBoard(id: number) {
-    return await this.delete(id);
+  async deleteBoard(boardId: number) {
+    return await this.delete(boardId);
   }
 }
