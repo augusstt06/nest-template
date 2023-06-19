@@ -4,6 +4,7 @@ import { DataSource, Repository } from 'typeorm';
 import { BoardDto } from '../dto/board.dto';
 import { UsersRepository } from 'src/domain/users/repository/users.repository';
 
+// async 적용할 것과 아닌것 생각
 @Injectable()
 export class BoardsRepository extends Repository<BoardEntity> {
   constructor(
