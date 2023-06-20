@@ -7,18 +7,22 @@ import { UserEntity } from './entity/users/user.entity';
 import { ProfileEntity } from './entity/users/profile.entity';
 import { BoardEntity } from './entity/boards/board.entity';
 import { BoardsModule } from './domain/boards/boards.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
     UsersModule,
     BoardsModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: process.env.MYSQL_HOST,
       port: 3306,
-      username: 'template',
-      password: 'template',
-      database: 'nest_template',
+      username: process.env.MYSQL_USERNAME,
+      password: process.env.MYSQL_PASSWORD,
+      database: process.env.MYSQL_DB,
       entities: [UserEntity, ProfileEntity, BoardEntity],
       synchronize: true,
     }),
