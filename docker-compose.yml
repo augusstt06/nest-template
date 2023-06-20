@@ -1,0 +1,31 @@
+version: '2.17.3'
+
+services:
+  nest-template:
+    container_name: nest
+    image: nest-template
+    build: .
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    environment:
+      - DB_TYPE=mysql
+      - MYSQL_HOST=localhost
+      - MYSQL_USER=template
+      - MYSQL_PASSWORD=template
+      - MYSQL_DB=nest_template
+      - MYSQL_PORT=3306
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_USER=template
+      - MYSQL_PASSWORD=template
+      - MYSQL_DB=nest_template
+    expose:
+      - 3306
