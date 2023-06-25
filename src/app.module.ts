@@ -10,6 +10,7 @@ import { BoardsModule } from './domain/boards/boards.module';
 import { ConfigModule } from '@nestjs/config';
 
 // docker에서 db접속안되는 문제해결하기
+// 로컬에서는 잘  돌아감
 @Module({
   imports: [
     UsersModule,
